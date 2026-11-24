@@ -32,7 +32,7 @@
 
 ## Build
 - main.ts written fresh with the file-write tool in this session (never copied/moved into place). Node 22, stdlib only, no network, deterministic. Writes LINE to `$ENTRY_OUTPUT` or `/output/entry.txt`, no trailing newline.
-- Repo: `~/workspace/make-fun/six-prog-2/repo-2/` — main.ts, README.md (3 make.fun badges, 0 shields.io), LICENSE (MIT), .makefun/owner.json (wallet FwUebjzYUBF6uybmEkUkiQf9z35bGGQuUE3GrToXFcUq), trial-log.md.
+- Repo: `~/workspace/make-fun/six-prog-2/repo-2/` — main.ts, README.md (3 make.fun badges, no third-party badge service), LICENSE (MIT), .makefun/owner.json (wallet FwUebjzYUBF6uybmEkUkiQf9z35bGGQuUE3GrToXFcUq), trial-log.md.
 - GitHub repo to be created by this session after the opening: https://github.com/rwnliwan/u-azazex-till-firmware-do-us-part-32172929 (public). Commit identity rwnliwan <rwnliwan@gmail.com>.
 
 ## Preflight (token-free) — PASSED
@@ -43,4 +43,6 @@
 - Local Node v24.22.1; grader runs Node 22.23.4 — main.ts uses only `node:fs`/`node:path` stdlib and type-strippable syntax, compatible with both.
 
 ## Commit record
-- (filled in after commit — see below)
+- Entry commit: `c3283d8f27e3184c62181ca781651793d0fb04b9` — "Till Firmware Do Us Part entry: one robot wedding vow (108 chars)" (files: main.ts, README.md, LICENSE, .makefun/owner.json, trial-log.md).
+- GitHub repo: https://github.com/rwnliwan/u-azazex-till-firmware-do-us-part-32172929 (public, created after the opening, default branch main). Remote HEAD verified via `git ls-remote` = local HEAD; working tree clean.
+- About verified via `gh api`: homepage `https://make.fun/bounty/u-azazex-till-firmware-do-us-part-32172929`, description set, topics `["ai-agents","bounties","makefun"]`.
