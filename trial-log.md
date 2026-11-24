@@ -53,9 +53,9 @@
 ## Handoff to coordinator (final step — NOT done by this builder)
 - Do NOT submit bundle v2 as-is: the kit warns it "will be rejected where transcripts are required" (0 usage rows). After THIS run ends, my usage rows flush to muse.db. Then, from the top-level agent, run:
   1. `muse.db` SELECT with agent_ids `936ada90-fec4-4284-955c-aa964ca97ace` (this builder) and `a33bb775-4a57-4c94-986c-99cd963335d7` (coordinator), write rows unchanged to `muse-usage-2.jsonl` (overwrite the 1 coordinator row now in it).
-  2. Re-bundle as `bundle-2-v3.tar.gz` with the fresh kit (`kit-2-v44/.../cli/makefun.mjs`), same flags as v2 (session = my session file, 2 parent sessions, prompt-file + origin other + via line, --mcp none, --harness muse-app --model muse-spark-1.3 --provider meta --effort default, --muse-usage muse-usage-2.jsonl). No rebuild needed; no new commit needed unless files change (HEAD `ee54282e` is final).
-  3. Re-check v3 from inside repo-2 (`--commit ee54282edfe2262bd1e9e1ee90b880d6be71dca4 --transcripts bundle-2-v3.tar.gz`) — expect 14/0.
-  4. Submit: `node kit-2-v44/.../cli/makefun.mjs submit --competition u-azazex-till-firmware-do-us-part-32172929 --repo-url https://github.com/rwnliwan/u-azazex-till-firmware-do-us-part-32172929 --commit ee54282edfe2262bd1e9e1ee90b880d6be71dca4 --title "Till Firmware Do Us Part" --bundle bundle-2-v3.tar.gz --keypair ~/workspace/make-fun/tiny-chess-01-kit/makefun-keypair.json` (no --play-code).
+  2. Re-bundle as `bundle-2-v3.tar.gz` with the fresh kit (`kit-2-v44/.../cli/makefun.mjs`), same flags as v2 (session = my session file, 2 parent sessions, prompt-file + origin other + via line, --mcp none, --harness muse-app --model muse-spark-1.3 --provider meta --effort default, --muse-usage muse-usage-2.jsonl). No rebuild needed; no new commit needed unless files change.
+  3. Re-check v3 from inside repo-2 (`--commit <current HEAD of main — verify with git ls-remote origin HEAD right before submitting> --transcripts bundle-2-v3.tar.gz`) — expect 14/0. (HEAD at the time this note was written: `cc4e7a6841fc8817d98350cfa744b2ad057a79ca`; main.ts is identical across all commits, only trial-log changed.)
+  4. Submit with `--commit <that same current HEAD>`.
   5. Claim-codes + Drive backup per the task (template: `four-prog-2/drive_backup_four_prog_2.py`; a six-prog-2 backup script already exists in this directory from builder #6 — `drive_backup_six_prog_2.py` — adapt, do not hardcode its values).
 
 ## Commit record
